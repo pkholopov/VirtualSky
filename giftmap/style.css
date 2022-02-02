@@ -27,11 +27,29 @@ p {
     border-radius: 50%;
 }
 
+.linkToMap {
+    color: white;
+    text-decoration: none;
+    padding: 5px 8px;
+    background-color: #002f5e;
+    border: 1px solid #000a14;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.linkToMap:hover {
+    transition: all 0.5s;
+    color:#000a14;
+    background-color: #3896f5;
+}
+
 #geoMap {
     margin: 10px 0;
 }
 
 .container {
+    margin-top: 30px;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
@@ -65,4 +83,15 @@ p {
     font-size: 14px;
     text-align: center;
     text-transform: uppercase;
+}
+#mapText {
+    padding: 5px;
+}
+.info {
+    background-color: transparent;
+    color: white;
+    font-size: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }

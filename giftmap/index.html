@@ -32,16 +32,25 @@
             <p>Укажите место, для которого необходимо показать карту звёздного неба</p>
             <div id="geoMap" style="width: 600px; height: 400px"></div>
             <form action="#">
-                <p><label for="mapText">Введите текст под картой</label>
-                <textarea id="mapText" cols="20" rows="1"></textarea></p>
+                <p><label for="mapText">Введите текст под картой: </label>
+                <textarea id="mapText" cols="40" rows="2"></textarea></p>
+                <p><label for="showPlace">Укажите название места <em>(можно оставить пустым): </em></label>
+                <input type="text" id="showPlace"></p>
+                <p><label for="showDate">Указать дату на карте </label>
+                <input type="checkbox" id="showDate"></p>
             </form>
-            <a href="map.html">Карта</a>
+            <p><a href="map.html" class="linkToMap">Создать карту</a></p>
         </div>
         <div class="map">
             <div class="outWrap" id="content">
                 <div class="wrapper">
                     <div id="starmap"></div>
                     <div class="textWrap"></div>
+                    <div class="info">
+                        <p class="coordinates"></p>
+                        <p class="place"></p>
+                        <p class="dateAndTime"></p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
-var long = localStorage.getItem('longitude') ?  parseFloat(localStorage.getItem('longitude')) : 41.78;
-var lat = localStorage.getItem('latitude') ?  parseFloat(localStorage.getItem('latitude')) : 53.44;
+var long = localStorage.getItem('longitude') ?  parseFloat(localStorage.getItem('longitude')) : 37.619;
+var lat = localStorage.getItem('latitude') ?  parseFloat(localStorage.getItem('latitude')) : 55.751;
 var planetarium;
 
 
@@ -16,7 +16,7 @@ function init(){
         center: [lat, long],
         // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
-        zoom: 7
+        zoom: 6
     });
     myMap.controls.remove('geolocationControl');
     myMap.controls.remove('trafficControl');
@@ -33,7 +33,6 @@ function init(){
         var pos = lat+', '+long;
         planetarium.setGeo(pos);
 		planetarium.setClock(0).draw();
-        console.log(localStorage.getItem('latitude'));
     }); 
 }
        
@@ -85,14 +84,29 @@ S(document).ready(function() {
         var value = document.querySelector('#mapText').value;
         localStorage.setItem('mapText', value);
         document.querySelector('.textWrap').innerHTML = value;
-    })
+    });
+    S('#showPlace').on('input',function(){
+        var value = document.querySelector('#showPlace').value;
+        localStorage.setItem('place', value);
+        document.querySelector('.place').innerHTML = value;
+    });
+    S('#showDate').on('change',function(){
+        if (document.querySelector('#showDate').checked){
+            var date = document.querySelector('#mapDate').value.replace( /-/g, "." );
+            document.querySelector('.dateAndTime').innerHTML = date;
+            localStorage.setItem('date', date);
+        }
+        else {
+            document.querySelector('.dateAndTime').innerHTML = '';
+            localStorage.removeItem('date');
+        }
+    });
 });
 
 function setDateAndTime(){
     var value = document.querySelector('#mapDate').value+'T'+document.querySelector('#mapTime').value;
     planetarium.setClock(value);
     localStorage.setItem('dateAndTime', value)
-    console.log(localStorage.getItem('dateAndTime'));
 }
 Date.prototype.toDateInputValue = (function() {
     var local = new Date(this);
@@ -108,8 +122,6 @@ Date.prototype.toTimeInputValue = (function() {
 
 function setDefault(){
     localStorage.clear();
-    //localStorage.removeItem('language');
-    //localStorage.removeItem('dateAndTime');
     document.querySelector('#mapDate').value = new Date().toDateInputValue();
     document.querySelector('#mapTime').value = new Date().toTimeInputValue();
 }

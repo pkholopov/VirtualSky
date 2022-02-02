@@ -1,8 +1,10 @@
-var long = localStorage.getItem('longitude') ?  parseFloat(localStorage.getItem('longitude')) : 41.78;
-var lat = localStorage.getItem('latitude') ?  parseFloat(localStorage.getItem('latitude')) : 53.44;
+var long = localStorage.getItem('longitude') ?  parseFloat(localStorage.getItem('longitude')) : 37.619;
+var lat = localStorage.getItem('latitude') ?  parseFloat(localStorage.getItem('latitude')) : 55.751;
 var mapLang = localStorage.getItem('language') ?  localStorage.getItem('language') : 'ru';
 var mapClock = localStorage.getItem('dateAndTime') ? localStorage.getItem('dateAndTime') : new Date();
-var mapText = localStorage.getItem('mapText') ?  localStorage.getItem('mapText') : ''
+var mapText = localStorage.getItem('mapText') ? localStorage.getItem('mapText') : '';
+var place = localStorage.getItem('place') ? localStorage.getItem('place') : '';
+var date = localStorage.getItem('date') ? localStorage.getItem('date') : '';
 var planetarium;
 console.log(mapLang);
 
@@ -39,5 +41,7 @@ S(document).ready(function() {
 	planetarium.updateColours();
 
     document.querySelector('.textWrap').innerHTML = mapText;
+    document.querySelector('.place').innerHTML = place;
+    document.querySelector('.dateAndTime').innerHTML = date;
 
 });
