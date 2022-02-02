@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+:root{
+    --map_size: 400px;
+}
+
+p {
+    line-height: 2;
+}
+
+.starmap_btn_help, .virtualskybutton, .starmap_clock, .starmap_position {
+	display:none !important;
+}
+#starmap {
+    width: var(--map_size);
+    height: var(--map_size);
+}
+#starmap_inner {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+#geoMap {
+    margin: 10px 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+.outWrap {
+    width: calc(var(--map_size)*1.24);
+    height: calc(var(--map_size)*1.754);
+    background-color: #000a14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper {
+    width: calc(var(--map_size)*1.154);
+    height: calc(var(--map_size)*1.668);
+    border: 1px solid white;
+    background-color: #000a14;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--map_size) 1fr 1fr;
+    align-items: end;
+    justify-items: center;
+    padding: calc(var(--map_size)*0.14) 0px 0px 0px;
+    box-sizing: border-box;
+}
+.textWrap {
+    width: var(--map_size);
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
