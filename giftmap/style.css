@@ -28,6 +28,7 @@ p {
 }
 
 .linkToMap {
+    transition: all 0.5s;
     color: white;
     text-decoration: none;
     padding: 5px 8px;
@@ -38,7 +39,6 @@ p {
 }
 
 .linkToMap:hover {
-    transition: all 0.5s;
     color:#000a14;
     background-color: #3896f5;
 }
