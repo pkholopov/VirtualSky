@@ -92,7 +92,8 @@ S(document).ready(function() {
     });
     S('#showDate').on('change',function(){
         if (document.querySelector('#showDate').checked){
-            var date = document.querySelector('#mapDate').value.replace( /-/g, "." );
+            //var date = document.querySelector('#mapDate').value.replace( /-/g, "." );
+            var date = document.querySelector('#mapDate').value.split('-').reverse().join('.');
             document.querySelector('.dateAndTime').innerHTML = date;
             localStorage.setItem('date', date);
         }
@@ -127,3 +128,4 @@ function setDefault(){
 }
 
 window.onload = setDefault();
+
