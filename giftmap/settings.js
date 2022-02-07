@@ -41,6 +41,8 @@ function init(){
 
 S(document).ready(function() {
 
+    setDefault();
+
 	planetarium = S.virtualsky({
 		id: 'starmap',				// ID блока в документе, в который выводится карта
         lang:'ru', 					// язык
@@ -127,5 +129,5 @@ function setDefault(){
     document.querySelector('#mapTime').value = new Date().toTimeInputValue();
 }
 
-window.onload = setDefault();
+//window.onload = setDefault();
 

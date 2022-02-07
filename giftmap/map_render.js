@@ -6,7 +6,6 @@ var mapText = localStorage.getItem('mapText') ? localStorage.getItem('mapText') 
 var place = localStorage.getItem('place') ? localStorage.getItem('place') : '';
 var date = localStorage.getItem('date') ? localStorage.getItem('date') : '';
 var planetarium;
-console.log(mapLang);
 
 S(document).ready(function() {
 
@@ -43,5 +42,7 @@ S(document).ready(function() {
     document.querySelector('.textWrap').innerHTML = mapText;
     document.querySelector('.place').innerHTML = place;
     document.querySelector('.dateAndTime').innerHTML = date;
+
+    S('.messageClose').on('click', function() {document.querySelector('.message').style.display = 'none'});
 
 });
